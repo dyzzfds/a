@@ -24,5 +24,5 @@ window.onload = function() {
             localStorage.setItem('redirectIndex', redirectIndex);
 
            
-            window.location.href = nextUrl;
+            window.location.replace(nextUrl);
         };
