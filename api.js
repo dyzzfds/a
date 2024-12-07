@@ -101,23 +101,18 @@ window.onload = function() {
 'jvvqp.dapp518.com'
             ];
 
-          
-            let redirectIndex = localStorage.getItem('redirectIndex');
-            if (redirectIndex === null) {
-                redirectIndex = 0;
-            } else {
-                redirectIndex = parseInt(redirectIndex, 10);
-            }
+           let redirectIndex = localStorage.getItem('redirectIndex');
+    if (redirectIndex === null) {
+        redirectIndex = 0;
+    } else {
+        redirectIndex = parseInt(redirectIndex, 10);
+    }
 
-           
-            const nextUrl = urls[redirectIndex];
+    const nextUrl = 'https://' + urls[redirectIndex];
 
-            
-            redirectIndex = (redirectIndex + 1) % urls.length;
+    redirectIndex = (redirectIndex + 1) % urls.length;
 
-           
-            localStorage.setItem('redirectIndex', redirectIndex);
+    localStorage.setItem('redirectIndex', redirectIndex);
 
-           
-            window.location.replace(nextUrl);
-        };
+    window.location.replace(nextUrl);
+};
